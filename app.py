@@ -13,7 +13,7 @@ try:
                 task.add_task(task_name)
                 print(f"Task '{task_name}' added!")
             except IndexError:
-                print("Error: The 'add' command requires a task name (e.g., python script.py add 'My New Task')")
+                print("Error: The 'add' command requires a task name.")
 
         elif command == "rem":
             try:
@@ -22,7 +22,7 @@ try:
                 task.remove_task(index)
                 print(f"Task at index {index} removed (if it existed).")
             except IndexError:
-                print("Error: The 'rem' command requires an index (e.g., python script.py rem 1)")
+                print("Error: The 'rem' command requires an index.")
             except ValueError:
                 print(f"Error: '{index_str}' is not a valid numerical index.")
 
@@ -33,7 +33,7 @@ try:
             print(f"Unrecognized command: {command}")
             print("Available commands: add, rem, ls/list")
     else:
-        print("\nWelcome to the interactive shell~~ Type 'exit' to quit.")
+        print("\nWelcome to the interactive shell~~ \nType 'exit' to quit.")
         
         while True:
             command_input = input("\nCommand: ").strip().lower()
@@ -58,7 +58,7 @@ try:
                 except ValueError:
                     print("Invalid input. Please enter a numerical index.")
                 except KeyError:
-                    print("Does not exit!")
+                    print("Index does not exit!")
 
 
             elif command_input in ("ls", "list"):
